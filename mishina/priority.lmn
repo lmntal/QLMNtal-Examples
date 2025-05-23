@@ -1,0 +1,5 @@
+a,a,a,a,a,a,a.
+
+           <4>a :- four. // high
+(<^><2>a), <2>a :- two.  // normal
+   (<^>a),    a :- one.  // low

@@ -1,0 +1,17 @@
+in(I),out(O),
+{+I,+XX1,+ZX1,e^i(0),c(-1)}, {+XX1,e^i(180),c(-1)},
+{+ZX1,+ZH1,+ZZ1,e^i(0),c(1)}, h{+ZH1,+XH1,e^i(180)}, {+XH1,e^i(180),c(-1)},
+{+ZZ1,+ZX2,e^i(180),c(1)}, {+ZX2,+O,e^i(180),c(-1)}.
+
+f@@ {+L1,e^i(A),$p1,c(C1)}, {+L1,e^i(B),$p2,c(C2)}
+  :- int(A), int(B), AplusB=A+B, int(C1), int(C2), C1*C2=:=1 |
+  f{e^i(AplusB),$p1,$p2,c(C1)}.
+  
+id@@ {+L1,+L2,e^i(0),c(C)} :- int(C), C*C=:=1 | L1=L2.
+{
+  system_ruleset. '$callback'(zerostep).
+  f{+'+', $p} :- f{$p}. f{$p} :- {$p}.
+}.
+
+h_1@@ {+L,e^i(A),c(C)}, h{+L,+O,e^i(180)}
+  :- int(A), int(C), CC=-C | {+O,e^i(A),c(CC)}.

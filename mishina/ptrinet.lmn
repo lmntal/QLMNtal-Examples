@@ -1,0 +1,8 @@
+{t(S1),s(T1),t(S2),s(T2),token},
+{t(Z1),s(U1)},{t(V1),s(W1),token},{t(X1),s(Y1)},
+{s(S1),t(U1),s(V1)},{t(W1),s(X1)},{t(T1),t(Y1),s(Z1)},
+{t(Z2),s(U2)},{t(V2),s(W2),token},{t(X2),s(Y2)},
+{s(S2),t(U2),s(V2)},{t(W2),s(X2)},{t(T2),t(Y2),s(Z2)}.
+
+M<+>{token,s(X),$p}, {M<+>t(X),N<+>s(Y)}, N<+>{t(Y),$r}
+ :- M<+>{s(X),$p}, {M<+>t(X),N<+>s(Y)}, N<+>{token,t(Y),$r}.

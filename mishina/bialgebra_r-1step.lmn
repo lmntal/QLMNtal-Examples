@@ -1,0 +1,7 @@
+r{+L1,+L2,+L6},
+g{+L3,+L4,+L5,+L6},
+dm(L1),dm(L2),dm(L3),dm(L4),dm(L5).
+token.
+
+r{M<1,>+X,+Z}, g{+Z,N<1,>+Y}, token
+ :- M<1,>g{+X,N<1,>+Z}, N<1,>r{M<1,>+Z,+Y}.
