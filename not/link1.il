@@ -1,14 +1,11 @@
 // a(X), b(X). c(Y), b(Y).
-// <^>a(X) :- e(X).
-// -> a(X), e(X). e(Y), e(Y).
+// <^>a(X) :- . // is not applied
+// -> a(X), b(X). c(Y), b(Y).
 
 Compiled Ruleset @602
 Compiled Rule
     --atommatch:
     --memmatch:
-        spec           [1, 1]
-        jump           [L106, [0], [], []]
-    --guard:L106:
         spec           [1, 1]
         jump           [L107, [0], [], []]
     --body:L107:
@@ -29,20 +26,12 @@ Compiled Rule
     --atommatch:
     --memmatch:
         spec           [1, 2]
-        anyatom     [1, 0]
         not [[
-          func         [1, 'a'_1]
-          proceed      []
+            findatom     [1, 0, 'a'_1]
+            proceed      []
         ]]
-        jump           [L101, [0], [1], []]
-    --guard:L101:
-        spec           [2, 2]
         jump           [L102, [0], [1], []]
     --body:L102:
         spec           [2, 3]
         commit         ["_aXeX", 0]
-        removeatom     [1, 0]
-        newatom      [2, 0, 'a'_1]
-        relink         [2, 0, 1, 0, 0]
-        freeatom       [1]
         proceed        []

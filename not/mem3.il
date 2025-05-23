@@ -1,5 +1,5 @@
 // {b, b, b}, {a}.
-// {a, $p} :- {a, $p}.
+// <^>{a, $p} :- {a, $p}.
 // {b, b, b, a}, {a}.
 
 Compiled Ruleset @602

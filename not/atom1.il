@@ -36,5 +36,4 @@ Compiled Rule
         spec           [2, 3]
         commit         ["_ac", 0]
         newatom      [2, 0, 'a'_0]
-        freeatom       [1]
         proceed        []

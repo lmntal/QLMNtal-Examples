@@ -1,0 +1,68 @@
+Compiled Ruleset @602
+Compiled Rule
+    --atommatch:
+    --memmatch:
+        spec           [1, 14]
+        commit         ["_init", 0]
+        newmem       [1, 0, 0]
+        loadruleset    [0, @601]
+        newatom      [2, 1, 'a'_1]
+        newatom      [3, 1, 'a'_1]
+        newatom      [4, 1, 'a'_1]
+        newatom      [5, 1, $in_2]
+        newatom      [6, 1, $in_2]
+        newatom      [7, 1, $in_2]
+        newatom      [8, 0, 'c'_1]
+        newatom      [9, 0, 'c'_1]
+        newatom      [10, 0, 'c'_1]
+        newatom      [11, 0, $out_2]
+        newatom      [12, 0, $out_2]
+        newatom      [13, 0, $out_2]
+        newlink        [2, 0, 5, 1, 1]
+        newlink        [3, 0, 6, 1, 1]
+        newlink        [4, 0, 7, 1, 1]
+        newlink        [8, 0, 11, 1, 0]
+        newlink        [9, 0, 12, 1, 0]
+        newlink        [10, 0, 13, 1, 0]
+        newlink        [11, 0, 5, 0, 0]
+        newlink        [12, 0, 6, 0, 0]
+        newlink        [13, 0, 7, 0, 0]
+        proceed        []
+
+// {<1,>a(X),$p} :- {<1,>b(X),$p}
+Compiled Ruleset @601
+Compiled Rule
+    --atommatch:
+    --memmatch:
+        spec         [1, 13]
+        anymem       [1, 0, 0, null]
+        norules      [1]
+        findatom     [2, 1, 'a'_1]
+        deref        [3, 2, 0, 1]
+        func           [3, $in_2]
+        deref        [4, 3, 0, 0]
+        func           [4, $out_2]
+        branch[[
+          findatom   [5, 1, 'a'_1]
+          neqatom    [5, 2]
+          deref      [6, 5, 0, 1]
+          func       [6, $in_2]
+          deref      [7, 6, 0, 0]
+          func       [7, $out_2]
+          pushmap    [8, [5]]
+          failreturn []
+        ]]
+        pickmaps       [9, 8, -1]
+        commit         ["_ab", 0]
+        removeatom     [2, 1]
+        newatom        [10, 1, 'b'_1]
+        relink         [10, 0, 2, 0, 1]
+        loop [[
+          popmap       [9]
+          newatom      [12, 0, 'ok'_0]
+          removeatom   [5, 1]
+          newatom      [11, 1, 'b'_1]
+          relink       [11, 0, 5, 0, 1]
+          proceed      []
+        ]]
+        proceed        []
